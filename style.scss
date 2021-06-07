@@ -1,0 +1,789 @@
+$primary_color: #00b237;
+$dark_grey_color: #333333;
+$light_grey_color: #f0f0f0;
+
+// NO VIŅU MĀJASLAPAS
+ $font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif;
+
+
+ // MIXINS
+@mixin contact-box() {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+@mixin text-dec-none() {
+  text-decoration: none;
+}
+
+@mixin flex-align-it-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin input-numb() {
+  border: none;
+  border-radius: 6px;
+  height: 45px;
+  padding-left: 30px;
+  width: 130px;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-sans-serif;
+  color: white;
+}
+
+h1, h2, h3 , h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  h1 {
+    margin-right: 85px;
+  }
+}
+
+a {
+  @include text-dec-none();
+  p {
+    @include text-dec-none();
+  }
+}
+
+
+
+// removes arrows for input=number
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.p-right-8 {
+  padding-right: 8px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.p-all {
+  padding: 0px clamp(40px, 60px, 130px);
+}
+
+.clamp-40{
+  margin-left: clamp(20px, 40px, 42px );
+}
+
+.icon-resize {
+  width: 15px;
+  height: 15px;
+  margin-left: 25px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: $light_grey_color;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.euro-icon {
+  margin: 0;
+  position: relative;
+  left: -30px;
+  width: 24px !important;
+  height: 21px;
+}
+
+// a bit different 'left' attribute
+.payment-icons {
+  margin: 0;
+  position: relative;
+  left: -45px;
+  width: 24px !important;
+  height: 21px;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 15px;
+  color: $primary_color;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+.top-header {
+  background-color: $primary_color;
+  min-height: 80px;
+  max-height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.clock-box {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  p {
+    margin-left: 8px;
+  }
+}
+
+.phone-box {
+  @include contact-box();
+  a {
+    text-decoration: none;
+    color: white;
+    margin-left: 8px;
+  }
+}
+
+.whatsapp-box {
+  @include contact-box();
+  a {
+    margin-left: 8px;
+    color: white;
+    @include text-dec-none();
+  }
+}
+
+.contacts-box {
+  p {
+    color: white;
+    margin-left: 25px;
+  }
+}
+
+.bottom-headers {
+  // width: 100%;
+  min-height: 80px;
+  max-height: 120px;
+}
+
+.dark-header {
+  height: 60px;
+  background-color: $dark_grey_color;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  div {
+    @include flex-align-it-center();
+  }
+  div a {
+    @include flex-align-it-center();
+  }
+  .vertical {
+    border-right: 2px solid white;
+    margin-left: 20px;
+  }
+  .exit {
+    img {
+      margin: 0 10px;
+    }
+    a {
+      margin-left: 8px;
+      color: white;
+    }
+  }
+}
+
+.left {
+  a {
+    p {
+      @include text-dec-none();
+      color: white;
+    }
+  }
+}
+
+.m-right-auto {
+  margin-right: auto;
+}
+
+.m-left-auto {
+  margin-left: auto;
+}
+
+.primary-header {
+  width: auto;
+  height: 60px;
+  background-color: $primary_color;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  p {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  input[type=number] {
+    @include input-numb();
+  }
+}
+
+
+
+// section / main 
+section {
+  p {
+    color: #333333;
+  }
+}
+
+.contract-section {
+  width: auto;
+  // height: 170px;
+  // max-height: 480px;
+  background-color: $light_grey_color;
+  color: #333333;
+  padding: 40px 60px;
+  input[type=number], input[type=datetime] {
+    @include input-numb();
+  }
+  .contract-adjustments {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .box {
+    margin-right: clamp(40px, 60px, 90px);
+    display: flex;
+    align-items: center;
+    input [type=datetime] {
+      text-align: center;
+    }
+    .width-max {
+      width: max-content;
+    } 
+    p {
+      margin-right: 20px;
+    }
+  }
+}
+
+.payment-big-flex {
+  display: flex;
+  .payments {
+    width: 70%;
+    display: inline-block;
+    .monthly-pay-box {
+      margin-right: clamp(30px, 50px, 90px);
+      display: inline-flex;
+      align-items: center;
+      p {
+        margin-right: 20px;
+      }
+      input { 
+          @include input-numb();
+          height: 60px;
+          width: 140px;
+          color: black;
+          font-size: 24px;
+          padding-left: 30px;
+        }
+      }
+    .payment-date-box {
+      display: inline-flex;
+      align-items: center;
+      input {
+        @include input-numb();
+        height: 60px;
+        width: 140px;
+        background-color:rgb(255, 255, 255);
+        border: 3px solid $light_grey_color;
+      }
+        p {
+          margin-right: 20px;
+        }
+      }
+    }
+  input {
+    /* min-width: 210px; */
+    /* max-width: 270px; */
+    width: 170px;
+    /* min-height: 60px; */
+    /* max-height: 80px; */
+    height: 60px;
+    background-color: #f0f0f0;
+    border: none;
+    border-color: #f0f0f0;
+    border-radius: 8px;
+    font-size: 24px;
+  }
+  .income-details {
+      display: inline-block;
+      p {
+        display: inline-block;
+        color: black;
+        margin-right: 20px;
+      }
+      label {
+        color: black;
+        margin-right: 55px;
+      }
+      .radio-btns {
+        input {
+          width: auto;
+          height: auto;
+          margin-right: 20px;
+        }
+     }
+  }
+  aside {
+    width: 30%;
+    height: 210px;
+    background-color: $light_grey_color;
+    border-radius: 8px;
+    padding: 25px 0 0 30px;
+    margin-left: 30px;
+    h4 {
+      color: black;
+      margin-bottom: 30px;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      a {
+        color: black;
+        text-decoration: underline;
+        margin: 15px 0;
+      }
+      .link-box {
+        display: flex;
+        align-items: center;
+      }
+    .arrow-icon {
+      margin: 0;
+      width: 24px !important;
+      height: 21px;
+    }
+    }
+  }
+}
+
+.loan-section {
+  background-color: rgb(255, 255, 255);
+  max-height: fit-content;
+  .title {
+    margin-top: 40px;
+  }
+
+  .choose-loan {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height: 145px;
+
+    .range-icon {
+      border: 2px solid $light_grey_color;
+      border-radius: 50%;
+      height: 55px;
+      width: 55px;
+    }
+
+    .range-box {
+      display: flex;
+      align-items: center;
+      img {
+        margin: 0 10px;
+        cursor: pointer;
+      }
+    }
+
+    // input-range styling
+    // thumb 
+    input[type=range] {
+      width: 540px;
+      width: 100%;
+    }
+
+    input[type=range] {
+      -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+      width: 540px; /* Specific width is required for Firefox. */
+      background: transparent; /* Otherwise white in Chrome */
+    }
+    
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+    }
+    
+    input[type=range]:focus {
+      outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+    
+    input[type=range]::-ms-track {
+      max-width: 540px;
+      width: 100%;
+      cursor: pointer;
+    
+      /* Hides the slider so custom styles can be added */
+      background: transparent; 
+      border-color: transparent;
+      color: transparent;
+    }
+
+
+    // range track
+    /* Special styling for WebKit/Blink */
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      border: 1px solid $primary_color;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      background: #ffffff;
+      cursor: pointer;
+      margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+      }
+
+      /* All the same stuff for Firefox */
+      input[type=range]::-moz-range-thumb {
+        border: 1px solid $primary_color;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+      }
+
+      /* All the same stuff for IE */
+      input[type=range]::-ms-thumb {
+       border: 1px solid $primary_color;
+       height: 40px;
+       width: 40px;
+       border-radius: 50%;
+       background: #ffffff;
+       cursor: pointer;
+      } 
+
+      input[type=range]::-webkit-slider-runnable-track {
+        max-width: 540px;
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: $primary_color;
+        border-radius: 6px;
+        border: 0.2px solid $primary_color;
+      }
+      
+      input[type=range]:focus::-webkit-slider-runnable-track {
+        background: $primary_color;
+      }
+      
+      input[type=range]::-moz-range-track {
+        max-width: 540px;
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: $primary_color;
+        border-radius: 6px;
+        border: 0.2px solid $primary_color;
+      }
+      
+      input[type=range]::-ms-track {
+        max-width: 540px;
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+      }
+      input[type=range]::-ms-fill-lower {
+        background: $primary_color;
+        border: 0.2px solid $primary_color;
+        border-radius: 6px;
+      }
+      input[type=range]:focus::-ms-fill-lower {
+        background: $primary_color;
+      }
+      input[type=range]::-ms-fill-upper {
+        background: $primary_color;
+        border: 0.2px solid $primary_color;
+        border-radius: 6px;
+      }
+      input[type=range]:focus::-ms-fill-upper {
+        background: $primary_color;
+      }
+
+
+
+    .loan-sum-box {
+      background-color: $light_grey_color;
+      color: #333333;
+      height: 140px;
+      border-radius: 8px;
+      width: 360px;
+      padding: 30px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      p {
+        display: inline-block;
+        // margin-left: auto;
+        // margin-top: 20px;
+      }
+      input {
+        // margin-right: auto;
+        @include input-numb();
+      }
+      .box-0 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .box-1 {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        p {
+          margin-right: 70px;
+        }
+      }
+      .box-2 {
+        display: flex;
+        align-items: center;
+        .info-icon {
+          width: 15px;
+          height: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .choice {
+    background-color: rgb(240, 240, 240);
+    border-radius: 8px;
+    margin-top: 20px;
+    height: 145px;
+    padding: 0 20px;
+    margin-bottom: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    label {
+      color: black;
+    }
+    input {
+      margin-left: 70px;
+      margin-right: 15px;
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      p {
+        margin-right: 75px;
+      }
+    }
+    .CTA-btn {
+      height: 60%;
+      width: 335px;
+      border: none;
+      border-radius: 8px;
+      background-color: $primary_color;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.section-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+// footer
+footer {
+  width: 100%;
+  height: 30vh;
+}
+
+.dark-footer {
+  height: 300px;
+  background-color: #242424;
+  padding-top: 50px;
+  display: flex;
+  .useful-links {
+    @include text-dec-none();
+    display: inline-flex;
+    flex-direction: column;
+    margin-right: 70px;
+    .sm-title {
+      color: $primary_color;
+    }
+    a {
+      color: white;
+    }
+  }
+  .payment-details {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    p {
+      margin-bottom: 15px;
+    }
+    span {
+      height: 45px;
+      border: 2px solid white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+      padding-left: 5px;
+    }
+    button {
+      height: 40px;
+      border: none;
+      background-color: $primary_color;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color:white;
+      font-size: 15px;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
+
+.light-footer {
+  height: 15%;
+  background-color: #353535;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+
+@media (max-width: 560px) {
+
+  // makes contacts dissappear
+  .contact-box {
+    div {
+      display: none !important;
+    }
+  }
+
+  .contract-section {
+    // height: 480px;
+    background-color: $light_grey_color;
+  }
+
+  .contract-adjustments {
+    width: auto;
+    max-height: 480px;
+    background-color: $light_grey_color;
+    color: #333333;
+    .box {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+// deals with contacts - however no hamburger menu
+@media (max-width: 890px) {
+  .top-header {
+    // removes contact info
+    .contact-box {
+      display: none;
+    }
+  }
+}
+
+// removes extra info on left side in top headers
+@media (max-width:600px) {
+  .dark-header {
+    // removes extra info
+    .left {
+      display: none;
+    }
+    // aligns to the left 
+    .right {
+      .user-name {
+        .icon-resize {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  .loan-section {
+    .choose-loan {
+      flex-direction: column-reverse;
+      margin-top: 80px;
+      input[type=range] {
+        width: 230px;
+      }
+      .range-box, img {
+        margin-bottom: -80px;
+        // img {
+        //   margin-bottom: -30px;
+        // }
+      }
+    }
+    .spec-line {
+      margin-top: 130px;
+    }
+  } 
+}
+
+// desperately trying to make 3 boxes stack and align well - unsuccessful
+@media (max-width: 1090px) {
+  .contract-adjustments {
+    flex-direction: column;
+    .m-custom {
+      margin-left: 35px;
+    }
+  }
+}
+
+
